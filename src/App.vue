@@ -26,6 +26,7 @@
   text-align: center
   color: #F5F5F5
   text-rendering: geometricPrecision
+  line-height: 170%
 
 #nav
   padding: 30px
