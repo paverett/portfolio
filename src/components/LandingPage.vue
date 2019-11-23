@@ -8,7 +8,10 @@
       <a class="social-link" href="https://github.com/paverett">
         <img class="imgLink" src="@/assets/github-square.svg" />
       </a>
-      <a class="social-link space-right" href="https://www.linkedin.com/in/porter-averett/">
+      <a
+        class="social-link space-right"
+        href="https://www.linkedin.com/in/porter-averett/"
+      >
         <img class="imgLink" src="@/assets/linkedin.png" />
       </a>
     </div>
@@ -30,9 +33,14 @@ h1
     font-size: 5.5em
     color: white
     font-family: 'Fira Code', monospace
+    @media screen and (max-width: 1170px)
+      font-size: 4.5em
+    @media screen and (max-width: 700px)
+      font-size: 3.5em
+    @media screen and (max-width: 500px)
+      font-size: 2.5em
 
 .absoluteCenter
-    max-width: 50%
     position: absolute
     left: 50%
     top: 50%

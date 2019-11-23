@@ -23,11 +23,30 @@ const routes = [
     path: "/portfolio",
     name: "portfolio",
     component: () => import("../views/Portfolio.vue")
+  },
+  {
+    path: "/contact-me",
+    name: "contact-me",
+    component: () => import("../views/Contact.vue")
+  },
+  {
+    path: "/resume",
+    name: "resume",
+    component: () => import("../views/Resume.vue")
+  },
+  {
+    path: "/thanks",
+    name: "success",
+    component: () => import("../components/SubmissionSuccess.vue")
+  },
+  {
+    path: "/404",
+    name: "fail",
+    component: () => import("../components/SubmissionFail.vue")
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
   base: process.env.BASE_URL,
   routes
 });
