@@ -1,3 +1,20 @@
 module.exports = {
-  transpileDependencies: ["vuetify"]
+  transpileDependencies: ["vuetify"],
+  configureWebpack: {
+    module: {
+      rules: [
+        {
+          test: /\.(pdf)(\?.*)?$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "assets/[name].pdf"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
 };
