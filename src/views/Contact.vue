@@ -5,9 +5,10 @@
       <!--<div v-html="skForm" />-->
       <form
         name="contactme"
-        action="/thanks"
+        method="post"
         netlify
         netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit"
       >
         <input type="hidden" name="form-name" value="contactme" />
         <p class="hidden">
@@ -55,10 +56,42 @@
 
 <script>
 //import skForm from "./../../public/skeleton-form.html";
+//import axios from "axios";
 
 export default {
-  name: "contact-me"
-  //data: () => ({ skForm })
+  name: "contact-me",
+  data() {
+    return {
+      form: {
+        contact: ""
+      }
+    };
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
+    },
+    handleSubmit() {
+      fetch("/contact-me", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: this.encode({
+          "form-name": "contact-me",
+          ...this.form
+        })
+      })
+        .then(() => {
+          this.$router.push("thanks");
+        })
+        .catch(() => {
+          this.$router.push("404");
+        });
+    }
+  }
 };
 </script>
 
