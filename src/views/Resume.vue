@@ -2,15 +2,8 @@
   <div class="about">
     <h1>Resume</h1>
     <v-sheet color="#010203" height="100vh" width="75%">
-      <object
-        :data="pdf"
-        type="application/pdf"
-        width="100%"
-        height="100%"
-      >
-        <p>
-          Alternative text - include a link <a :href="pdf">to the PDF!</a>
-        </p>
+      <object :data="pdf" type="application/pdf" width="100%" height="100%">
+        <p>Alternative text - include a link <a :href="pdf">to the PDF!</a></p>
       </object>
     </v-sheet>
   </div>
