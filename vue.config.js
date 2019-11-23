@@ -12,7 +12,7 @@ module.exports = {
             {
               loader: "file-loader",
               options: {
-                name: "assets/[name].pdf"
+                name: "[path][name].pdf"
               }
             }
           ]
