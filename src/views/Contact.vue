@@ -56,7 +56,7 @@
 
 <script>
 //import skForm from "./../../public/skeleton-form.html";
-//import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "contact-me",
@@ -76,8 +76,7 @@ export default {
         .join("&");
     },
     handleSubmit() {
-      fetch("/contact-me", {
-        method: "POST",
+      axios.post("/contact-me", {
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: this.encode({
           "form-name": "contact-me",
