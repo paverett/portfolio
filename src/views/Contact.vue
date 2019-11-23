@@ -1,16 +1,21 @@
 <template>
-  <v-sheet color="white">
-    <form name="contactme" method="post" data-netlify="true">
-      <input type="hidden" name="form-name" value="contactme" />
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />'
-      <label for="email">Email:</label>
-      <input type="email" name="email" id="email" />
-      <label for="message">Message:</label>
-      <textarea type="text" name="message" id="message" />
-      <button>Submit</button>
-    </form>
-  </v-sheet>
+  <div>
+    <h1>Contact Me</h1>
+    <v-sheet color="white">
+      <form name="contactme" method="post" data-netlify="true" netlify-honeypot="botfield">
+        <input type="hidden" name="form-name" value="contactme" />
+        <label class="hidden" for="bot-field">Don't fill this out if your human:</label>
+        <input class="hidden" name="bot-field" id="bot-field" type="text" />
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />'
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" />
+        <label for="message">Message:</label>
+        <textarea type="text" name="message" id="message" />
+        <button>Submit</button>
+      </form>
+    </v-sheet>
+  </div>
 </template>
 
 <script>
@@ -71,6 +76,5 @@ button:hover
   border: 2px solid #000
 
 .hidden
-  position: absolute
-  left: -9999px
+  display: none
 </style>
