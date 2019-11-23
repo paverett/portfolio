@@ -26,7 +26,7 @@
         problems in order to solve them more efficiently, and a strong
         understanding of Python, and Web Development.
       </p>
-      <p>Check out my <a href="/resume">Resume</a></p>
+      <p>Check out my <router-link to="/resume">Resume</router-link></p>
     </v-sheet>
   </div>
 </template>
