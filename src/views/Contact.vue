@@ -2,18 +2,24 @@
   <div class="about">
     <h1>Contact Me</h1>
     <v-sheet color="white">
+      <!--<div v-html="skForm" />-->
       <form
         name="contactme"
         action="/thanks"
-        method="post"
         netlify
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="contactme" />
+        <p class="hidden">
+          <label
+            >Don’t fill this out if you're human: <input name="bot-field"
+          /></label>
+        </p>
         <div>
           <v-text-field
             light
             type="text"
+            name="name"
             required
             label="Name"
             background-color="#fff"
@@ -24,6 +30,7 @@
           <v-text-field
             light
             type="email"
+            name="email"
             required
             label="Email"
             background-color="#fff"
@@ -45,6 +52,15 @@
     </v-sheet>
   </div>
 </template>
+
+<script>
+//import skForm from "./../../public/skeleton-form.html";
+
+export default {
+  name: "contact-me"
+  //data: () => ({ skForm })
+};
+</script>
 
 <style lang="sass" scoped>
 h1
@@ -79,4 +95,8 @@ button:hover
   width: 20%
   background: #000
   border: 2px solid #000
+
+.hidden
+  position: absolute
+  left: -9999px
 </style>
